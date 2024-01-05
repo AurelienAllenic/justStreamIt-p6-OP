@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'djangoApp/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'djangoApp/css/nav.css' %}">
+
+    <title>JustStreamIt</title>
+</head>
+<body>
+    <span id="home"></span>
+    <section>
+        <header class="container_nav">
+            <nav>
+                <ul class="list_nav_items">
+                    <div class="container_logo">
+                        <li><a href="#home">JustStreamIt</a></li>
+                    </div>
+                    <div class="container_links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </header> </section>
+        <section id='banner' class="banner" style="background-size: cover; background-image: url('https://cache.cosmopolitan.fr/data/photo/w1000_ci/1ec/harrypotter.webp'); background-position: center center;">
+            <div class='banner_contents'>
+            <h1 class='banner_title' id="banner_title"></h1>
+              
+            <h2 class='banner_description' id="banner_description"></h2>
+            <div class='banner_buttons'>
+                <button class='banner_button' id="playButton">Play</button>
+            </div>
+            </div>
+          <div class='banner--fadeBottom'></div>
+        </section>
+
+        <section class='row'>
+            <h2>Films les mieux notés</h2>
+            <div class='row_posters' id="best-rated-movies" onload="fetchBestMovies()">
+            </div>      
+        </section>
+        <span  id="categories"></span>
+        <section class='row'>
+            <h2>Action Movies</h2>
+            <div class='row_posters'onload='fetchGenreMovies("action")' id="action-movies">
+            </div>      
+        </section>
+        <section class='row'>
+            <h2>Comedy Movies</h2>
+            <div class='row_posters' onload='fetchGenreMovies("comedy")' id="comedy-movies">
+            </div>      
+        </section>
+        <section class='row final_row'>
+            <h2>Horror Movies</h2>
+            <div class='row_posters' onload='fetchGenreMovies("horror")' id="horror-movies">
+            </div>      
+        </section>
+        <!-- Modale pour les détails du film -->
+<div id="movieModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h1 id="modal-title" class="modal-title"></h1>
+        <div class="modal-container">
+            <div class="container_left">
+        <ul class="container_infos">
+            <li id="modal-genre"></li>
+            <li id="modal-release-date"></li>
+            <li id="modal-duration"></li>
+        </ul> 
+        <img class="modal-image" id="modal-image" src="" alt="Image du film">
+        </div>
+        <ul class="container_right">
+            <li id="modal-score"></li>
+            <li id="modal-imdb-score"></li>
+            <li id="modal-director"></li>
+            <li id="modal-summary"></li>
+            <li id="modal-cast"></li>
+            <li id="modal-country"></li>
+            <ul class="container-box-office">
+                <li id="modal-box-office-critics"></li>
+                <li id="modal-box-office-users"></li>
+            </ul>
+            
+        </ul>
+        </div>
+        <!-- Ajoutez d'autres éléments pour les détails du film ici -->
+    </div>
+</div>
+
+        <script src="{% static 'djangoApp/js/main.js' %}"></script>
+</body>
+</html>
