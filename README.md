@@ -15,7 +15,7 @@ Base de Données : SQLite (par défaut avec Django)
 
 # Cloner le Dépôt
 
-git clone https://github.com/votre_username/justStreamIt.git
+git clone https://github.com/AurelienAllenic/justStreamIt-p6-OP
 cd justStreamIt
 
 # Configurer l'Environnement Virtuel
