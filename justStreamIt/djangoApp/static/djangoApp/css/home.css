@@ -1,3 +1,8 @@
+h1, h2, h3, h4{
+    color: white;
+    font-size: 1.5em;
+}
+
 /* NAV */
 
 .container_nav {
